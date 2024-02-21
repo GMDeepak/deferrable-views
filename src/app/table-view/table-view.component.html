@@ -1,0 +1,20 @@
+<!-- <button (click)="loadData = true">load Table</button> -->
+
+@defer {
+<!-- @defer (on timer(2000)) { -->
+<!-- @defer (when loadData==true) { -->
+<!-- @defer (when loadData==true; prefetch on idle) { -->
+<app-table-data></app-table-data>
+} @placeholder {
+<div>
+  <h3 style="color: blueviolet">Table View</h3>
+</div>
+}@loading(minimum 2s) {
+<div>
+  <h3 style="color: gray">Table Loading...</h3>
+</div>
+}@error {
+<div>
+  <h3 style="color: red">did not load table view component</h3>
+</div>
+}

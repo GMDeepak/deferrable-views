@@ -1,0 +1,22 @@
+<div style="padding-top: 50px">
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Body</th>
+    </thead>
+    <tbody>
+      @defer (when tableData) {
+      <tr *ngFor="let data of tableData">
+        <td>{{ data.id }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.body }}</td>
+      </tr>
+      }@loading(minimum 2s) {
+      <td style="color: gray">Api fetching data...</td>
+      }
+    </tbody>
+  </table>
+</div>
